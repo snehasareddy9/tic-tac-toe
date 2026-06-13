@@ -1,0 +1,141 @@
+.container {
+  max-width: 380px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.controls {
+  margin-bottom: 12px;
+}
+
+.controls label {
+  margin-right: 10px;
+}
+
+.controls select {
+  padding: 4px;
+  margin-left: 4px;
+}
+
+.controls button {
+  padding: 5px 12px;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.scores {
+  margin: 8px 0 16px;
+  font-size: 14px;
+  color: #333;
+}
+
+.scores span {
+  margin: 0 6px;
+}
+
+.reset-link {
+  background: none;
+  border: none;
+  color: #5b5959;
+  cursor: pointer;
+  font-size: 12px;
+  text-decoration: underline;
+  padding: 0;
+  margin-left: 4px;
+}
+
+.status {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.hint {
+  color: #000000;
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight : bold;
+}
+
+.error {
+  margin: 10px auto;
+  padding: 8px 10px;
+  background: #fdecea;
+  border: 1px solid #f5c2c0;
+  color: #842029;
+  font-size: 13px;
+  border-radius: 3px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  grid-gap: 5px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.cell {
+  width: 80px;
+  height: 80px;
+  font-size: 32px;
+  font-weight: bold;
+  background: #fff;
+  border: 1px solid #999;
+  cursor: pointer;
+}
+
+.cell:disabled {
+  cursor: default;
+}
+
+.cell.win {
+  background: #d4edda;
+  border-color: #28a745;
+  color: #155724;
+}
+
+.game-actions {
+  margin-top: 12px;
+}
+
+.game-actions button {
+  margin: 0 4px;
+  padding: 5px 12px;
+  cursor: pointer;
+}
+
+.game-actions button:disabled {
+  cursor: default;
+  color: #999;
+}
+
+.history {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.history h3 {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.history table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.history th, .history td {
+  border-bottom: 1px solid #ddd;
+  padding: 4px 8px;
+  text-align: left;
+}
+
+.history th {
+  background: #f0f0f0;
+}

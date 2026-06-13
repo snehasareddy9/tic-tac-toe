@@ -1,0 +1,63 @@
+<div class="container">
+  <h1>Tic Tac Toe</h1>
+
+  <div class="controls">
+    <label>
+      Mode:
+      <select [value]="mode" (change)="onModeChange($any($event.target).value)" [disabled]="busy">
+        <option value="pvp">2 Players</option>
+        <option value="ai">vs Computer</option>
+      </select>
+    </label>
+    <button (click)="newGame()" [disabled]="busy">New Game</button>
+  </div>
+
+  <div class="scores">
+    <span>X: {{ scoreboard.x }}</span>
+    <span>O: {{ scoreboard.o }}</span>
+    <span>Draws: {{ scoreboard.draws }}</span>
+    <button (click)="resetScoreboard()" [disabled]="busy">reset scoreboard</button>
+  </div>
+
+  <div *ngIf="errorMsg" class="error" role="alert">
+    {{ errorMsg }}
+    <button class="reset-link" (click)="dismissError()">dismiss</button>
+  </div>
+
+  <div *ngIf="!game" class="hint">Click "New Game" to start.</div>
+
+  <div *ngIf="game">
+    <p class="status">{{ status() }}</p>
+
+    <div class="board">
+      <button class="cell"
+              *ngFor="let cell of game.board; let i = index"
+              [class.win]="isWinningCell(i)"
+              (click)="makeMove(i)"
+              [disabled]="busy || !!cell || game.status !== 'InProgress'">
+        {{ cell }}
+      </button>
+    </div>
+
+    <div class="game-actions">
+      <button (click)="undoMove()" [disabled]="busy || !canUndo()">Undo</button>
+      <button (click)="resetGame()" [disabled]="busy">Reset Game</button>
+    </div>
+
+    <div class="history" *ngIf="game.moves.length > 0">
+      <h3>Move History</h3>
+      <table>
+        <thead>
+          <tr><th>Move</th><th>Player</th><th>Position</th></tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let m of game.moves">
+            <td>{{ m.moveNumber }}</td>
+            <td>{{ m.player }}</td>
+            <td>Row {{ m.row }}, Column {{ m.col }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
