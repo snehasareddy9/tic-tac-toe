@@ -9,6 +9,7 @@ obj/
 # Angular
 node_modules/
 dist/
+frontend/.angular/
 
 # User files
 *.user
