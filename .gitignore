@@ -1,6 +1,19 @@
-backend/bin/
-backend/obj/
-frontend/node_modules/
-frontend/dist/
-frontend/.angular/
-*.log
+# Visual Studio
+.vs/
+**/.vs/
+
+# .NET
+bin/
+obj/
+
+# Angular
+node_modules/
+dist/
+
+# User files
+*.user
+*.suo
+
+# Test results
+TestResults/
+coverage/
