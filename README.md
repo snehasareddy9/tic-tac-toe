@@ -33,6 +33,13 @@ The backend owns all game rules, validation, move history and the scoreboard. Th
 - The frontend is intentionally thin: it calls REST endpoints and renders the response.
 - All state is in-memory; nothing is persisted to disk.
 
+
+## Here are few refrences how the screen look like:
+![alt text](Game_Computer_Challenge.png)
+![alt text](Game_Win.png)
+![alt text](Game_InProgess.png)
+![alt text](Game_start.png)
+
 ## Tech stack
 
 | Layer | Choice |
@@ -552,8 +559,3 @@ Documented in "Clarifications and assumptions" above. The main ones:
 - **Three separate PowerShell windows** (launcher + backend + frontend) instead of one console with interleaved output — easier to read each server's log; trade-off is closing them is a manual step.
 - **Plain CSS, no UI library** — keeps the bundle small (~140 KB main.js) and avoids a "ChatGPT-generated landing page" look. Trade-off: no design polish.
 
-Here are few refrences how the screen look like:
-![alt text](Game_Computer_Challenge.png)
-![alt text](Game_Win.png)
-![alt text](Game_InProgess.png)
-![alt text](Game_start.png)
